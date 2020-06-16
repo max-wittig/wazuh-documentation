@@ -16,7 +16,7 @@ To generate the certificate execute the following command:
 
 .. code-block:: console
 
- # openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -out rootCA.pem -batch -subj "/C=US/ST=CA/O=Manager"
+  # openssl req -x509 -new -nodes -newkey rsa:4096 -keyout rootCA.key -out rootCA.pem -batch -subj "/C=US/ST=CA/O=Manager"
 
 .. warning::
 
@@ -235,7 +235,7 @@ There are two options to register the Wazuh agent using host verification. Pleas
 
          .. code-block:: console
 
-          # openssl req -new -nodes -newkey rsa:4096 -keyout sslagent.key -out sslagent.csr -batch
+          # openssl req -new -nodes -newkey rsa:4096 -keyout sslagent.key -out sslagent.csr -batch -subj '/C=US/ST=CA/O=Manager'
           # openssl x509 -req -days 365 -in sslagent.csr -CA rootCA.pem -CAkey rootCA.key -out sslagent.cert -CAcreateserial
 
 
